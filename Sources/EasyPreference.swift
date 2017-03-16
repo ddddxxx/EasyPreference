@@ -8,12 +8,59 @@
 
 import Foundation
 
-public class EasyPreference {
+public struct ValueChange<T> {
+    
+    public let oldValue: T
+    
+    public let newValue: T
+    
+    init(_ old: T, _ new: T) {
+        oldValue = old
+        newValue = new
+    }
+    
+}
+
+public class EasyPreference: NSObject {
     
     let defaults: UserDefaults
     
-    public init(defaults: UserDefaults = .standard) {
+    var events = [String: Event]()
+    
+    public init(defaults: UserDefaults) {
         self.defaults = defaults
+    }
+    
+    public func subscribe<T>(key: PreferenceKey<T>, using: @escaping (ValueChange<T>) -> Void) -> EventSubscription {
+        if !events.keys.contains(key.rawValue) {
+            defaults.addObserver(self, forKeyPath: key.rawValue, options: [.old, .new], context: nil)
+            events[key.rawValue] = Event()
+        }
+        let subscription = EventSubscription({ using(ValueChange($0 as! T, $1 as! T)) })
+        events[key.rawValue]?.add(subscription: subscription)
+        return subscription
+    }
+    
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let keyPath = keyPath,
+            let event = events[keyPath] else {
+                return
+        }
+        
+        guard let old = change?[.oldKey], let new = change?[.newKey] else {
+            return
+        }
+        
+        event.notify(old, new)
+        if event.subscriptions.count == 0 {
+            events.removeValue(forKey: keyPath)
+        }
+    }
+    
+    deinit {
+        for key in events.keys {
+            defaults.removeObserver(self, forKeyPath: key)
+        }
     }
     
 }
@@ -108,6 +155,22 @@ public struct PreferenceKey<T>: RawRepresentable, Hashable {
     
     public var hashValue: Int {
         return rawValue.hashValue
+    }
+    
+}
+
+extension PreferenceKey: ExpressibleByStringLiteral {
+    
+    public init(stringLiteral value: String) {
+        rawValue = value
+    }
+    
+    public init(extendedGraphemeClusterLiteral value: String) {
+        rawValue = value
+    }
+    
+    public init(unicodeScalarLiteral value: String) {
+        rawValue = value
     }
     
 }
