@@ -75,6 +75,21 @@ extension EasyPreference {
         set { defaults.set(newValue, forKey: key.rawValue) }
     }
     
+    // Generic Subscripts has implemented in Swift 4.
+    // before that, use getter/setter instead.
+    
+    public func object<T: NSCoding>(for key: PreferenceKey<T>) -> T? {
+        guard let data = defaults.data(forKey: key.rawValue) else {
+            return nil
+        }
+        return NSUnarchiver.unarchiveObject(with: data) as? T
+    }
+    
+    public func setObject<T: NSCoding>(_ newValue: T, for key: PreferenceKey<T>) {
+        let data = NSArchiver.archivedData(withRootObject: newValue)
+        defaults.set(data, forKey: key.rawValue)
+    }
+    
 }
 
 // MARK: - PreferenceKey
