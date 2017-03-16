@@ -31,6 +31,20 @@ public class EasyPreference: NSObject {
         self.defaults = defaults
     }
     
+    public func subscribe<T: NSCoding>(key: PreferenceKey<T>, using: @escaping (ValueChange<T>) -> Void) -> EventSubscription {
+        if !events.keys.contains(key.rawValue) {
+            defaults.addObserver(self, forKeyPath: key.rawValue, options: [.old, .new], context: nil)
+            events[key.rawValue] = Event()
+        }
+        let subscription = EventSubscription() { old, new in
+            let oldValue = NSUnarchiver.unarchiveObject(with: old as! Data) as! T
+            let newValue = NSUnarchiver.unarchiveObject(with: new as! Data) as! T
+            using(ValueChange(oldValue, newValue))
+        }
+        events[key.rawValue]?.add(subscription: subscription)
+        return subscription
+    }
+    
     public func subscribe<T>(key: PreferenceKey<T>, using: @escaping (ValueChange<T>) -> Void) -> EventSubscription {
         if !events.keys.contains(key.rawValue) {
             defaults.addObserver(self, forKeyPath: key.rawValue, options: [.old, .new], context: nil)

@@ -14,12 +14,22 @@ Preference[Name]
 Preference[Age]
 Preference.object(for: Color)
 
-let token = Preference.subscribe(key: Age) { change in
+let token1 = Preference.subscribe(key: Age) { change in
+    print("\(change.oldValue) -> \(change.newValue)")
+}
+
+let token2 = Preference.subscribe(key: Color) { change in
     print("\(change.oldValue) -> \(change.newValue)")
 }
 
 Preference[Age] = 21
 
-token.invalidate()
+token1.invalidate()
 
 Preference[Age] = 22
+
+Preference.setObject(.green, for: Color)
+
+token2.invalidate()
+
+Preference.setObject(.blue, for: Color)
