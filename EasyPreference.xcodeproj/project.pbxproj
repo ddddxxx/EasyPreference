@@ -11,6 +11,10 @@
 		BB6294CF1E7A55FD0027B2A0 /* EasyPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = BB62949C1E7A54EE0027B2A0 /* EasyPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB6294D01E7A55FE0027B2A0 /* EasyPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = BB62949C1E7A54EE0027B2A0 /* EasyPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB6294D11E7A55FE0027B2A0 /* EasyPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = BB62949C1E7A54EE0027B2A0 /* EasyPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB6294D31E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
+		BB6294D41E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
+		BB6294D51E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
+		BB6294D61E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,7 @@
 		BB6294CB1E7A557E0027B2A0 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		BB6294CC1E7A557E0027B2A0 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		BB6294CD1E7A557E0027B2A0 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
+		BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyPreference.swift; path = Sources/EasyPreference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,7 @@
 		BB6294CE1E7A55840027B2A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */,
 				BB6294C91E7A557E0027B2A0 /* Supporting Files */,
 			);
 			name = Sources;
@@ -218,21 +224,25 @@
 					BB6294981E7A54EE0027B2A0 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = KCY8NMTG34;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					BB6294A61E7A54FC0027B2A0 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = KCY8NMTG34;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					BB6294B31E7A55080027B2A0 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = KCY8NMTG34;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					BB6294C01E7A551B0027B2A0 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = KCY8NMTG34;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -293,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6294D31E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6294D41E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6294D51E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6294D61E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
