@@ -37,8 +37,13 @@ public class EasyPreference: NSObject {
             events[key.rawValue] = Event()
         }
         let subscription = EventSubscription() { old, new in
-            let oldValue = NSKeyedUnarchiver.unarchiveObject(with: old as! Data) as! T
-            let newValue = NSKeyedUnarchiver.unarchiveObject(with: new as! Data) as! T
+            guard let oldData = old as? Data, let newData = new as? Data else {
+                return
+            }
+            guard let oldValue = NSKeyedUnarchiver.unarchiveObject(with: oldData) as? T,
+                let newValue = NSKeyedUnarchiver.unarchiveObject(with: newData) as? T else {
+                return
+            }
             using(ValueChange(oldValue, newValue))
         }
         events[key.rawValue]?.add(subscription: subscription)
@@ -50,7 +55,11 @@ public class EasyPreference: NSObject {
             defaults.addObserver(self, forKeyPath: key.rawValue, options: [.old, .new], context: nil)
             events[key.rawValue] = Event()
         }
-        let subscription = EventSubscription({ using(ValueChange($0 as! T, $1 as! T)) })
+        let subscription = EventSubscription() { old, new in
+            if let old = old as? T, let new = new as? T {
+                using(ValueChange(old, new))
+            }
+        }
         events[key.rawValue]?.add(subscription: subscription)
         return subscription
     }
