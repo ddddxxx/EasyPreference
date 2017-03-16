@@ -37,8 +37,8 @@ public class EasyPreference: NSObject {
             events[key.rawValue] = Event()
         }
         let subscription = EventSubscription() { old, new in
-            let oldValue = NSUnarchiver.unarchiveObject(with: old as! Data) as! T
-            let newValue = NSUnarchiver.unarchiveObject(with: new as! Data) as! T
+            let oldValue = NSKeyedUnarchiver.unarchiveObject(with: old as! Data) as! T
+            let newValue = NSKeyedUnarchiver.unarchiveObject(with: new as! Data) as! T
             using(ValueChange(oldValue, newValue))
         }
         events[key.rawValue]?.add(subscription: subscription)
@@ -143,11 +143,11 @@ extension EasyPreference {
         guard let data = defaults.data(forKey: key.rawValue) else {
             return nil
         }
-        return NSUnarchiver.unarchiveObject(with: data) as? T
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as? T
     }
     
     public func setObject<T: NSCoding>(_ newValue: T, for key: PreferenceKey<T>) {
-        let data = NSArchiver.archivedData(withRootObject: newValue)
+        let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
         defaults.set(data, forKey: key.rawValue)
     }
     
