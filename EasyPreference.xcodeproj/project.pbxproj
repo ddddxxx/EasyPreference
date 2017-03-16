@@ -33,6 +33,8 @@
 		BB6294CD1E7A557E0027B2A0 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyPreference.swift; path = Sources/EasyPreference.swift; sourceTree = "<group>"; };
 		BB6294D71E7A5BB00027B2A0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Sources/Event.swift; sourceTree = "<group>"; };
+		BB6294E51E7A996A0027B2A0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BB6294E61E7A996A0027B2A0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		BB62948D1E7A54C50027B2A0 = {
 			isa = PBXGroup;
 			children = (
+				BB6294E71E7A996E0027B2A0 /* Metadata */,
 				BB6294CE1E7A55840027B2A0 /* Sources */,
 				BB62949A1E7A54EE0027B2A0 /* Products */,
 			);
@@ -107,6 +110,15 @@
 				BB6294C91E7A557E0027B2A0 /* Supporting Files */,
 			);
 			name = Sources;
+			sourceTree = "<group>";
+		};
+		BB6294E71E7A996E0027B2A0 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				BB6294E61E7A996A0027B2A0 /* README.md */,
+				BB6294E51E7A996A0027B2A0 /* LICENSE */,
+			);
+			name = Metadata;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
