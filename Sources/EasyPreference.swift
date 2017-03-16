@@ -31,7 +31,7 @@ public class EasyPreference: NSObject {
         self.defaults = defaults
     }
     
-    public func subscribe<T: NSCoding>(key: PreferenceKey<T>, using: @escaping (ValueChange<T>) -> Void) -> EventSubscription {
+    @discardableResult public func subscribe<T: NSCoding>(key: PreferenceKey<T>, using: @escaping (ValueChange<T>) -> Void) -> EventSubscription {
         if !events.keys.contains(key.rawValue) {
             defaults.addObserver(self, forKeyPath: key.rawValue, options: [.old, .new], context: nil)
             events[key.rawValue] = Event()
@@ -45,7 +45,7 @@ public class EasyPreference: NSObject {
         return subscription
     }
     
-    public func subscribe<T>(key: PreferenceKey<T>, using: @escaping (ValueChange<T>) -> Void) -> EventSubscription {
+    @discardableResult public func subscribe<T>(key: PreferenceKey<T>, using: @escaping (ValueChange<T>) -> Void) -> EventSubscription {
         if !events.keys.contains(key.rawValue) {
             defaults.addObserver(self, forKeyPath: key.rawValue, options: [.old, .new], context: nil)
             events[key.rawValue] = Event()

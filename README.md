@@ -38,7 +38,7 @@ let package = Package(
 ```swift
 import EasyPreference
 
-let Preference = EasyPreference.init(defaults: .standard)
+let Preference = EasyPreference(defaults: .standard)
 let Name:   PreferenceKey<String>   = "Name"
 let Age:    PreferenceKey<Int>      = "Age"
 let Color:  PreferenceKey<NSColor>  = "Color"
