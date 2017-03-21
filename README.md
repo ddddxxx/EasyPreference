@@ -3,11 +3,94 @@
 ![platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS-lightgrey.svg)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+A Swift extension to use `UserDefaults` in a simple, elegant, type-safe way. This library also supports key-value observing with block.
+
 ## Requirements
 
 - macOS 10.9+ / iOS 8.0+ / tvOS 9.0+ / watchOS 2.0+
 - Xcode 8+
 - Swift 3.0+
+
+## Introduction
+
+This library aims to make it super-easy to read, write and observeing the defaults from `UserDefaults `, even supporting coding/decoding with `NSKeyedArchiver`.
+
+#### before
+```swift
+let Defaults = UserDefaults.standard
+let Name = "Name"
+let Age = "Age"
+let Photo = "Photo"
+
+class Man: NSObject {
+    
+    let name: String?
+    let age: Int
+    let photo: NSImage?
+    
+    override init() {
+        name = Defaults.string(forKey: Name)
+        age = Defaults.integer(forKey: Age)
+        if let photoData = Defaults.data(forKey: Photo) {
+            photo = NSKeyedUnarchiver.unarchiveObject(with: photoData) as? NSImage
+        } else {
+            photo = nil
+        }
+        super.init()
+        
+        Defaults.addObserver(self, forKeyPath: Age, options: [.old, .new], context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let keyPath = keyPath else {
+            return
+        }
+        
+        guard let change = change,
+            let oldValue = change[.oldKey], let newValue = change[.newKey] else {
+            return
+        }
+        
+        switch keyPath {
+        case Age:
+            print("\(oldValue) -> \(newValue)")
+        default:
+            break
+        }
+    }
+    
+    deinit {
+        Defaults.removeObserver(self, forKeyPath: Age)
+    }
+    
+}
+```
+
+#### after
+```swift
+let Defaults = EasyPreference(defaults: .standard)
+let Name: PreferenceKey<String> = "Name"
+let Age: PreferenceKey<Int> = "Age"
+let Photo: PreferenceKey<NSImage> = "Photo"
+
+class Man {
+    
+    let name: String?
+    let age: Int
+    let photo: NSImage?
+    
+    init() {
+        name = Defaults[Name]
+        age = Defaults[Age]
+        photo = Preference.object(for: Photo)
+        
+        Defaults.subscribe(key: Age) { change in
+            print("\(change.oldValue) -> \(change.newValue)")
+        }
+    }
+    
+}
+```
 
 ## Installation
 
@@ -29,42 +112,6 @@ let package = Package(
         .Package(url: "https://github.com/XQS6LB3A/EasyPreference", majorVersion: 0)
     ]
 )
-```
-
-## Usage
-
-### Quick Start
-
-```swift
-import EasyPreference
-
-let Preference = EasyPreference(defaults: .standard)
-let Name:   PreferenceKey<String>   = "Name"
-let Age:    PreferenceKey<Int>      = "Age"
-let Color:  PreferenceKey<NSColor>  = "Color"
-
-Preference[Name] = "Xander"
-Preference[Age]  = 20
-Preference.setObject(.red, for: Color)
-
-Preference[Name]
-// "Xander"
-Preference[Age]
-// 20
-Preference.object(for: Color)
-// NSColor: #FF0000FF
-
-let token = Preference.subscribe(key: Age) { change in
-    print("\(change.oldValue) -> \(change.newValue)")
-}
-
-Preference[Age] = 21
-// 20 -> 21
-
-token.invalidate()
-
-Preference[Age] = 22
-// nothing happes
 ```
 
 ## License
