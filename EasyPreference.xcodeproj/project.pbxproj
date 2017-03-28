@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0B29701E81411000B1D6C9 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = BB0B296F1E81411000B1D6C9 /* .travis.yml */; };
 		BB62949E1E7A54EE0027B2A0 /* EasyPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = BB62949C1E7A54EE0027B2A0 /* EasyPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB6294CF1E7A55FD0027B2A0 /* EasyPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = BB62949C1E7A54EE0027B2A0 /* EasyPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB6294D01E7A55FE0027B2A0 /* EasyPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = BB62949C1E7A54EE0027B2A0 /* EasyPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB0B296F1E81411000B1D6C9 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		BB6294991E7A54EE0027B2A0 /* EasyPreference.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyPreference.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB62949C1E7A54EE0027B2A0 /* EasyPreference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyPreference.h; sourceTree = "<group>"; };
 		BB6294A71E7A54FC0027B2A0 /* EasyPreference.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyPreference.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			children = (
 				BB6294E61E7A996A0027B2A0 /* README.md */,
 				BB6294E51E7A996A0027B2A0 /* LICENSE */,
+				BB0B296F1E81411000B1D6C9 /* .travis.yml */,
 			);
 			name = Metadata;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0B29701E81411000B1D6C9 /* .travis.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

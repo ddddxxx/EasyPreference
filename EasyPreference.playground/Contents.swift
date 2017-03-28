@@ -1,4 +1,4 @@
-import Foundation
+import Cocoa
 import EasyPreference
 
 let Preference = EasyPreference(defaults: .standard)
