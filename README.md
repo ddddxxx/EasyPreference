@@ -1,5 +1,6 @@
 # EasyPreference
 
+[![Build Status](https://travis-ci.org/XQS6LB3A/EasyPreference.svg?branch=master)](https://travis-ci.org/XQS6LB3A/EasyPreference)
 ![platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS-lightgrey.svg)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
