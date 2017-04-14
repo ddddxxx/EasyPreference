@@ -18,7 +18,6 @@ public struct ValueChange<T> {
         oldValue = old
         newValue = new
     }
-    
 }
 
 public class EasyPreference: NSObject {
@@ -148,18 +147,17 @@ extension EasyPreference {
     // Generic Subscripts has implemented in Swift 4.
     // before that, use getter/setter instead.
     
-    public func object<T: NSCoding>(for key: PreferenceKey<T>) -> T? {
+    public func unarchive<T: NSCoding>(for key: PreferenceKey<T>) -> T? {
         guard let data = defaults.data(forKey: key.rawValue) else {
             return nil
         }
         return NSKeyedUnarchiver.unarchiveObject(with: data) as? T
     }
     
-    public func setObject<T: NSCoding>(_ newValue: T, for key: PreferenceKey<T>) {
+    public func archive<T: NSCoding>(_ newValue: T, for key: PreferenceKey<T>) {
         let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
         defaults.set(data, forKey: key.rawValue)
     }
-    
 }
 
 public class PreferenceKeys {}
@@ -183,7 +181,6 @@ public class PreferenceKey<T>: PreferenceKeys, RawRepresentable, Hashable, Expre
     public required convenience init(stringLiteral value: String) {
         self.init(value)
     }
-    
 }
 
 extension ExpressibleByUnicodeScalarLiteral where Self: ExpressibleByStringLiteral, Self.StringLiteralType == String {
