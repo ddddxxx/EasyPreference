@@ -162,38 +162,38 @@ extension EasyPreference {
     
 }
 
-// MARK: - PreferenceKey
+public class PreferenceKeys {}
 
-public struct PreferenceKey<T>: RawRepresentable, Hashable {
+public class PreferenceKey<T>: PreferenceKeys, RawRepresentable, Hashable, ExpressibleByStringLiteral {
     
     public let rawValue: String
     
-    public init!(rawValue: String) {
-        self.rawValue = rawValue
+    public var hashValue: Int {
+        return rawValue.hashValue
     }
     
     public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
     
-    public var hashValue: Int {
-        return rawValue.hashValue
+    public required convenience init(rawValue: String) {
+        self.init(rawValue)
+    }
+    
+    public required convenience init(stringLiteral value: String) {
+        self.init(value)
     }
     
 }
 
-extension PreferenceKey: ExpressibleByStringLiteral {
-    
-    public init(stringLiteral value: String) {
-        rawValue = value
-    }
-    
-    public init(extendedGraphemeClusterLiteral value: String) {
-        rawValue = value
-    }
-    
+extension ExpressibleByUnicodeScalarLiteral where Self: ExpressibleByStringLiteral, Self.StringLiteralType == String {
     public init(unicodeScalarLiteral value: String) {
-        rawValue = value
+        self.init(stringLiteral: value)
     }
-    
+}
+
+extension ExpressibleByExtendedGraphemeClusterLiteral where Self: ExpressibleByStringLiteral, Self.StringLiteralType == String {
+    public init(extendedGraphemeClusterLiteral value: String) {
+        self.init(stringLiteral: value)
+    }
 }
