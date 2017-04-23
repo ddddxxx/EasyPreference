@@ -185,30 +185,31 @@ extension EasyPreference {
 }
 
 extension EasyPreference {
+    
+    public typealias Key = Keys.Key
 
-    public class Keys {}
-
-    public class Key<T>: Keys, RawRepresentable, Hashable, ExpressibleByStringLiteral {
-        
-        public let rawValue: String
-        
-        public var hashValue: Int {
-            return rawValue.hashValue
-        }
-        
-        public init(_ rawValue: String) {
-            self.rawValue = rawValue
-        }
-        
-        public required convenience init(rawValue: String) {
-            self.init(rawValue)
-        }
-        
-        public required convenience init(stringLiteral value: String) {
-            self.init(value)
+    public class Keys {
+        public class Key<T>: Keys, RawRepresentable, Hashable, ExpressibleByStringLiteral {
+            
+            public let rawValue: String
+            
+            public var hashValue: Int {
+                return rawValue.hashValue
+            }
+            
+            public init(_ rawValue: String) {
+                self.rawValue = rawValue
+            }
+            
+            public required convenience init(rawValue: String) {
+                self.init(rawValue)
+            }
+            
+            public required convenience init(stringLiteral value: String) {
+                self.init(value)
+            }
         }
     }
-    
 }
 
 extension ExpressibleByUnicodeScalarLiteral where Self: ExpressibleByStringLiteral, Self.StringLiteralType == String {
