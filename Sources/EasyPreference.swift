@@ -56,7 +56,7 @@ public class EasyPreference: NSObject {
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard let keyPath = keyPath else { return }
         
-        events[keyPath] = observings.filter { $0.isValid }
+        events[keyPath] = events[keyPath]?.filter { $0.isValid }
         guard let observings = events[keyPath] else { return }
         
         guard let old = change?[.oldKey], let new = change?[.newKey] else { return }
