@@ -16,10 +16,6 @@
 		BB6294D41E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
 		BB6294D51E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
 		BB6294D61E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
-		BB6294D81E7A5BB00027B2A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D71E7A5BB00027B2A0 /* Event.swift */; };
-		BB6294D91E7A5BB00027B2A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D71E7A5BB00027B2A0 /* Event.swift */; };
-		BB6294DA1E7A5BB00027B2A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D71E7A5BB00027B2A0 /* Event.swift */; };
-		BB6294DB1E7A5BB00027B2A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D71E7A5BB00027B2A0 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +30,6 @@
 		BB6294CC1E7A557E0027B2A0 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		BB6294CD1E7A557E0027B2A0 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyPreference.swift; path = Sources/EasyPreference.swift; sourceTree = "<group>"; };
-		BB6294D71E7A5BB00027B2A0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Sources/Event.swift; sourceTree = "<group>"; };
 		BB6294E51E7A996A0027B2A0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BB6294E61E7A996A0027B2A0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */,
-				BB6294D71E7A5BB00027B2A0 /* Event.swift */,
 				BB6294C91E7A557E0027B2A0 /* Supporting Files */,
 			);
 			name = Sources;
@@ -240,7 +234,7 @@
 		BB62948E1E7A54C50027B2A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				TargetAttributes = {
 					BB6294981E7A54EE0027B2A0 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -325,7 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6294D81E7A5BB00027B2A0 /* Event.swift in Sources */,
 				BB6294D31E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +327,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6294D91E7A5BB00027B2A0 /* Event.swift in Sources */,
 				BB6294D41E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6294DA1E7A5BB00027B2A0 /* Event.swift in Sources */,
 				BB6294D51E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6294DB1E7A5BB00027B2A0 /* Event.swift in Sources */,
 				BB6294D61E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +353,48 @@
 		BB6294921E7A54C50027B2A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
 		BB6294931E7A54C50027B2A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 			};
 			name = Release;
 		};
@@ -518,7 +544,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -584,7 +610,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
