@@ -16,10 +16,6 @@
 		BB6294D41E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
 		BB6294D51E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
 		BB6294D61E7A573A0027B2A0 /* EasyPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */; };
-		BB6294D81E7A5BB00027B2A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D71E7A5BB00027B2A0 /* Event.swift */; };
-		BB6294D91E7A5BB00027B2A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D71E7A5BB00027B2A0 /* Event.swift */; };
-		BB6294DA1E7A5BB00027B2A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D71E7A5BB00027B2A0 /* Event.swift */; };
-		BB6294DB1E7A5BB00027B2A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6294D71E7A5BB00027B2A0 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +30,6 @@
 		BB6294CC1E7A557E0027B2A0 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		BB6294CD1E7A557E0027B2A0 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyPreference.swift; path = Sources/EasyPreference.swift; sourceTree = "<group>"; };
-		BB6294D71E7A5BB00027B2A0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Sources/Event.swift; sourceTree = "<group>"; };
 		BB6294E51E7A996A0027B2A0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BB6294E61E7A996A0027B2A0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				BB6294D21E7A573A0027B2A0 /* EasyPreference.swift */,
-				BB6294D71E7A5BB00027B2A0 /* Event.swift */,
 				BB6294C91E7A557E0027B2A0 /* Supporting Files */,
 			);
 			name = Sources;
@@ -325,7 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6294D81E7A5BB00027B2A0 /* Event.swift in Sources */,
 				BB6294D31E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +327,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6294D91E7A5BB00027B2A0 /* Event.swift in Sources */,
 				BB6294D41E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6294DA1E7A5BB00027B2A0 /* Event.swift in Sources */,
 				BB6294D51E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB6294DB1E7A5BB00027B2A0 /* Event.swift in Sources */,
 				BB6294D61E7A573A0027B2A0 /* EasyPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
