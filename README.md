@@ -1,3 +1,5 @@
+⚠️ This repo is deprecated. Please migrate to [GenericID](https://github.com/ddddxxx/GenericID).
+
 # EasyPreference
 
 [![Build Status](https://travis-ci.org/XQS6LB3A/EasyPreference.svg?branch=master)](https://travis-ci.org/XQS6LB3A/EasyPreference)
